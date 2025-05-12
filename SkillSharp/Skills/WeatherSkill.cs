@@ -13,7 +13,7 @@ namespace SkillSharp.Skills
             throw new NotImplementedException();
         }
 
-        public void Handle(string input)
+        public string Handle(string input)
         {
             throw new NotImplementedException();
         }

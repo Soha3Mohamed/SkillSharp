@@ -10,12 +10,12 @@ namespace SkillSharp.Skills
     {
         public bool CanHandle(string input)
         {
-            throw new NotImplementedException();
+            return true;//just for testing
         }
 
-        public void Handle(string input)
+        public string Handle(string input)
         {
-            throw new NotImplementedException();
+            return "hello in joking world";
         }
 
         public string WHoAmI()

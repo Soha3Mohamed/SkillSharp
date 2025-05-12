@@ -4,7 +4,16 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            var bot = new Chatbot();
+
+            while (true)
+            {
+                Console.Write("You: ");
+                var input = Console.ReadLine();
+                var response = bot.GetResponse(input);
+                Console.WriteLine("Bot: " + response);
+            }
+
         }
     }
 }
