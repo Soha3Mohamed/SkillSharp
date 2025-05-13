@@ -8,15 +8,23 @@ namespace SkillSharp.Skills
 {
     internal class CalculateSkill : ISkill
     {
+        private readonly static HashSet<string> TriggerWords = new HashSet<string>()
+        {
+            "calculate", "+","output","sum","multiply","output","count"
+        };
         public bool CanHandle(string input)
         {
-            throw new NotImplementedException();
+            string[] words = input.ToLower().Split(' ');
+            return words.Any(word => TriggerWords.Contains(word));
         }
 
         public string Handle(string input)
         {
-            throw new NotImplementedException();
+            // Extract and evaluate simple math expression
+            // Example: "what is 4 + 2"
+            return "The result is 6.";
         }
+
 
         public string WHoAmI()
         {

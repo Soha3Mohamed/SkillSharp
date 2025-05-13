@@ -23,5 +23,14 @@ namespace SkillSharp
     // tommorrow i will also change program.cs to give users previously written answers like: tell me a joke, what is the weather, what is the output of 2+6?
     just to make it easy for the chatbot because i have no real AI out there!!! 
 
+    //i wrote a first version of canhandle function in joke skills and then started to refactor and think of better logic
+      //first i split the input string and after using ToLower() ---> good idea
+      //then i looped with for loop on the input words and for every word i used an if with very big condition statement to try to see
+        // if the word is one of the possible words that implies a joke  ---> very bad because i kept adding || 
+
+    //i made the code way better by introducing the HashSet concept ( i read about it first) and then i used a hash set called Trigger words 
+    //instead of checking with if to decide the return, i used Any() operator to see if the word is in the TriggerWords hashset ---> so good isn't it
+
+
     }
 }

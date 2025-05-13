@@ -8,15 +8,21 @@ namespace SkillSharp.Skills
 {
     internal class WeatherSkill : ISkill
     {
+        private static readonly HashSet<string> TriggerWords = new HashSet<string>()
+        {
+            "forecast","weather","warm","sunny","temperature","cold","rainy"
+        };
         public bool CanHandle(string input)
         {
-            throw new NotImplementedException();
+            string[] words = input.ToLower().Split(' ');
+            return words.Any(word => TriggerWords.Contains(word));
         }
 
         public string Handle(string input)
         {
-            throw new NotImplementedException();
+            return "Today in Cairo: Sunny, 28°C.";
         }
+
 
         public string WHoAmI()
         {
