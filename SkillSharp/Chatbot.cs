@@ -9,7 +9,7 @@ namespace SkillSharp
 {
     internal class Chatbot
     {
-        List<ISkill> _skills = new List<ISkill> { new JokeSkill(), new CalculateSkill() , new WeatherSkill()};
+        List<ISkill> _skills = new List<ISkill> { new JokeSkill(), new TimeSkill() , new WeatherSkill(), new ThanksSkill()};
         string UserInput;
         public Chatbot( )
         {

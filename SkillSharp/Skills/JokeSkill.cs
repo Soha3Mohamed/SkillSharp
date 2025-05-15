@@ -13,6 +13,14 @@ namespace SkillSharp.Skills
         {
             "joke", "funny" , "laugh" , "smile" , "laughing" , "joking" , "smiling"
         };
+
+        private static readonly List<string> JokeList = new List<string>()
+        {
+            "Why don’t scientists trust atoms? Because they make up everything!",
+            "I told my computer I needed a break, and now it won’t stop sending me KitKat ads.",
+            "Why did the programmer quit his job? Because he didn't get arrays."
+
+        };
         public bool CanHandle(string input)
         {
             
@@ -30,13 +38,15 @@ namespace SkillSharp.Skills
 
         public string Handle(string input)
         {
-            return "Why don’t skeletons fight each other? They don’t have the guts.";
+            var random = new Random();
+            int index = random.Next(JokeList.Count);
+            return JokeList[index];
         }
 
 
         public string WHoAmI()
         {
-            throw new NotImplementedException();
+            return $"I am here to tell you a funny joke!";
         }
     }
 }

@@ -6,12 +6,13 @@ using System.Threading.Tasks;
 
 namespace SkillSharp.Skills
 {
-    internal class CalculateSkill : ISkill
+    internal class ThanksSkill : ISkill
     {
-        private readonly static HashSet<string> TriggerWords = new HashSet<string>()
+        private static readonly HashSet<string> TriggerWords = new HashSet<string>()
         {
-            "calculate", "+","output","sum","multiply","output","count"
+            "thanks","helped","merci","thank"
         };
+
         public bool CanHandle(string input)
         {
             string[] words = input.ToLower().Split(' ');
@@ -20,15 +21,13 @@ namespace SkillSharp.Skills
 
         public string Handle(string input)
         {
-            // Extract and evaluate simple math expression
-            // Example: "what is 4 + 2"
-            return "The result is 6.";
+            
+            return "You are welcome.I thank you for chatting with me today.";
         }
-
 
         public string WHoAmI()
         {
-            throw new NotImplementedException();
+            return $"I am here to acknowledge you thanks.";
         }
     }
 }

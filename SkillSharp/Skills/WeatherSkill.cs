@@ -12,6 +12,14 @@ namespace SkillSharp.Skills
         {
             "forecast","weather","warm","sunny","temperature","cold","rainy"
         };
+
+        private static readonly Dictionary<string, string> CityWeather = new()
+        {
+               { "cairo", "Sunny, 28°C" },
+               { "london", "Cloudy, 16°C" },
+               { "new york", "Rainy, 21°C" }
+        };
+
         public bool CanHandle(string input)
         {
             string[] words = input.ToLower().Split(' ');
@@ -20,13 +28,21 @@ namespace SkillSharp.Skills
 
         public string Handle(string input)
         {
-            return "Today in Cairo: Sunny, 28°C.";
+            string[] words = input.ToLower().Split(' ');
+            foreach (var word in words)
+            {
+                if (CityWeather.ContainsKey(word))
+                {
+                    return $"Weather in {word}: {CityWeather[word]}";
+                }
+            }
+
+            return "Sorry, I couldn't find weather info for that location.";
         }
-
-
+    
         public string WHoAmI()
         {
-            throw new NotImplementedException();
+            return $"I am here to help you everything about weather.";
         }
     }
 }
